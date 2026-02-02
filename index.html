@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio - Caipirona Lanches</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --accent: #facc15;
             --bg-dark: #0f0f0f;
         }
-        body { 
-            font-family: 'Inter', sans-serif; 
+
+        body {
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-dark);
             color: #eeeeee;
         }
-        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
-        
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
         /* Contentor para a logo com corte inteligente */
         .logo-container {
             width: 100%;
-            height: 280px;
+            height: 345px;
             overflow: hidden;
             position: relative;
             display: flex;
             justify-content: center;
         }
+
         .logo-img {
             width: 100%;
             max-width: 500px;
             height: auto;
             object-fit: cover;
-            object-position: top; 
+            object-position: top;
             transform: translateY(-10px);
         }
 
         .wood-texture {
-            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('https://www.transparenttextures.com/patterns/dark-wood.png');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.92)), url('https://www.transparenttextures.com/patterns/dark-wood.png');
         }
 
         .price-tag {
@@ -54,6 +64,7 @@
             padding-bottom: 5px;
             margin-bottom: 1.5rem;
         }
+
         .category-title::after {
             content: '';
             position: absolute;
@@ -67,7 +78,7 @@
         /* Banner de destaque por secção */
         .section-banner {
             width: 100%;
-            height: 240px;
+            height: 600px;
             object-fit: cover;
             border-radius: 16px;
             border: 1px solid rgba(250, 204, 21, 0.2);
@@ -82,28 +93,39 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.2s;
         }
+
         .menu-item:hover {
             background: rgba(255, 255, 255, 0.06);
             border-color: rgba(250, 204, 21, 0.3);
         }
     </style>
 </head>
+
 <body class="wood-texture min-h-screen">
 
     <!-- Cabeçalho com Logótipo -->
     <header class="pt-8 pb-4 text-center">
         <div class="logo-container">
-            <img src="https://ttescaro.github.io/cardapiocaipirona/logo.png" alt="Logótipo Caipirona Lanches" class="logo-img" onerror="this.src='https://via.placeholder.com/500x300?text=Caipirona+Lanches'">
+            <img src="https://ttescaro.github.io/cardapiocaipirona/logo.png" alt="Logótipo Caipirona Lanches"
+                class="logo-img" onerror="this.src='https://via.placeholder.com/500x300?text=Caipirona+Lanches'">
         </div>
-        
+
         <!-- Contactos Interativos -->
         <div class="mt-2 flex flex-col items-center gap-2">
             <div class="flex items-center space-x-4">
-                <a href="https://instagram.com/food_da_caipirona" class="flex items-center space-x-1 text-gray-300 hover:text-yellow-400 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <a href="https://instagram.com/food_da_caipirona"
+                    class="flex items-center space-x-1 text-gray-300 hover:text-yellow-400 transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
                     <span class="font-bold">@food_da_caipirona</span>
                 </a>
-                <span class="text-yellow-500 font-bold">(15) 99793-7500</span>
+                <span class="text-yellow-500 font-bold">
+                    <a class="text-yellow-500 font-bold"
+                        href="https://wa.me/15997937500?text=Olá,%20Gostaria%20de%20fazer%20um%20pedido!"
+                        target="_blank">(15) 99793-7500</a>
+                </span>
             </div>
         </div>
     </header>
@@ -113,41 +135,48 @@
         <!-- HAMBÚRGUER PRENSADO -->
         <section>
             <h2 class="text-3xl font-bold category-title">Hambúrguer Prensado</h2>
-            <img src="https://ttescaro.github.io/cardapiocaipirona/prensado.jpeg" alt="[Imagem de Hambúrguer Prensado]" class="section-banner" onerror="this.src='https://via.placeholder.com/600x300?text=Hambúrguer+Prensado'">
-            
+            <img src="https://ttescaro.github.io/cardapiocaipirona/prensado.jpeg" alt="[Imagem de Hambúrguer Prensado]"
+                class="section-banner"
+                onerror="this.src='https://via.placeholder.com/600x300?text=Hambúrguer+Prensado'">
+
             <div class="space-y-4">
                 <div class="menu-item flex justify-between items-start">
                     <div>
                         <h3 class="text-xl font-bold">X-BURGUER</h3>
-                        <p class="text-gray-400 text-sm mt-1">carne artesanal 180g, presunto, mussarela, tomate e maionese.</p>
+                        <p class="text-gray-400 text-sm mt-1">carne artesanal 180g, presunto, mussarela, tomate e
+                            maionese.</p>
                     </div>
                     <span class="price-tag">R$ 25,00</span>
                 </div>
                 <div class="menu-item flex justify-between items-start">
                     <div>
                         <h3 class="text-xl font-bold">X-SALADA</h3>
-                        <p class="text-gray-400 text-sm mt-1">carne artesanal 180g, presunto, mussarela, tomate, alface e maionese.</p>
+                        <p class="text-gray-400 text-sm mt-1">carne artesanal 180g, presunto, mussarela, tomate, alface
+                            e maionese.</p>
                     </div>
                     <span class="price-tag">R$ 28,00</span>
                 </div>
                 <div class="menu-item flex justify-between items-start">
                     <div>
                         <h3 class="text-xl font-bold">X-BACON</h3>
-                        <p class="text-gray-400 text-sm mt-1">carne artesanal 180g, presunto, mussarela, tomate, alface, bacon e maionese.</p>
+                        <p class="text-gray-400 text-sm mt-1">carne artesanal 180g, presunto, mussarela, tomate, alface,
+                            bacon e maionese.</p>
                     </div>
                     <span class="price-tag">R$ 35,00</span>
                 </div>
                 <div class="menu-item flex justify-between items-start">
                     <div>
                         <h3 class="text-xl font-bold">FRAMBURGUER</h3>
-                        <p class="text-gray-400 text-sm mt-1">carne artesanal 180g, presunto, mussarela, tomate, alface, filé de frango e maionese.</p>
+                        <p class="text-gray-400 text-sm mt-1">carne artesanal 180g, presunto, mussarela, tomate, alface,
+                            filé de frango e maionese.</p>
                     </div>
                     <span class="price-tag">R$ 35,00</span>
                 </div>
                 <div class="menu-item flex justify-between items-start">
                     <div>
                         <h3 class="text-xl font-bold">FRAMBACON</h3>
-                        <p class="text-gray-400 text-sm mt-1">carne artesanal 180g, presunto, mussarela, tomate, alface, filé de frango, bacon e maionese.</p>
+                        <p class="text-gray-400 text-sm mt-1">carne artesanal 180g, presunto, mussarela, tomate, alface,
+                            filé de frango, bacon e maionese.</p>
                     </div>
                     <span class="price-tag">R$ 40,00</span>
                 </div>
@@ -158,18 +187,26 @@
         <section class="bg-yellow-500/10 border-2 border-dashed border-yellow-500/30 rounded-2xl p-6">
             <h2 class="text-xl font-bold text-center mb-4 text-yellow-500 tracking-wider">Turbine o seu Lanche</h2>
             <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase text-center">
-                <div class="flex justify-between bg-black/40 p-3 rounded-lg border border-white/5"><span>Cheddar</span> <span class="text-yellow-400">R$ 5,00</span></div>
-                <div class="flex justify-between bg-black/40 p-3 rounded-lg border border-white/5"><span>Catupiry</span> <span class="text-yellow-400">R$ 5,00</span></div>
-                <div class="flex justify-between bg-black/40 p-3 rounded-lg border border-white/5"><span>Bacon</span> <span class="text-yellow-400">R$ 8,00</span></div>
-                <div class="flex justify-between bg-black/40 p-3 rounded-lg border border-white/5"><span>Carne 180g</span> <span class="text-yellow-400">R$ 12,00</span></div>
+                <div class="flex justify-between bg-black/40 p-3 rounded-lg border border-white/5"><span>Cheddar</span>
+                    <span class="text-yellow-400">R$ 5,00</span>
+                </div>
+                <div class="flex justify-between bg-black/40 p-3 rounded-lg border border-white/5"><span>Catupiry</span>
+                    <span class="text-yellow-400">R$ 5,00</span>
+                </div>
+                <div class="flex justify-between bg-black/40 p-3 rounded-lg border border-white/5"><span>Bacon</span>
+                    <span class="text-yellow-400">R$ 8,00</span>
+                </div>
+                <div class="flex justify-between bg-black/40 p-3 rounded-lg border border-white/5"><span>Carne
+                        180g</span> <span class="text-yellow-400">R$ 12,00</span></div>
             </div>
         </section>
 
         <!-- PÃO DE BRIOCHE -->
         <section>
             <h2 class="text-3xl font-bold category-title">Hambúrguer Pão de Brioche</h2>
-            <img src="https://ttescaro.github.io/cardapiocaipirona/hambbrioche.jpeg" alt="" class="section-banner" onerror="this.src='https://via.placeholder.com/600x300?text=Pão+de+Brioche'">
-            
+            <img src="https://ttescaro.github.io/cardapiocaipirona/hambbrioche.jpeg" alt="" class="section-banner"
+                onerror="this.src='https://via.placeholder.com/600x300?text=Pão+de+Brioche'">
+
             <div class="space-y-4">
                 <div class="menu-item flex justify-between items-center">
                     <div>
@@ -188,35 +225,40 @@
                 <div class="menu-item flex justify-between items-center border-l-4 border-green-500 bg-green-900/10">
                     <div>
                         <h3 class="text-lg font-bold text-green-400">VEGETARIANO 🌱</h3>
-                        <p class="text-xs text-gray-400">Milho, Catupiry, Cheddar, Tomate, Alface, Cebola Roxa e Batata Palha.</p>
+                        <p class="text-xs text-gray-400">Milho, Catupiry, Cheddar, Tomate, Alface, Cebola Roxa e Batata
+                            Palha.</p>
                     </div>
                     <span class="text-lg font-bold text-yellow-400">R$ 32,00</span>
                 </div>
                 <div class="menu-item flex justify-between items-center">
                     <div>
                         <h3 class="text-lg font-bold">SALADA BACON</h3>
-                        <p class="text-xs text-gray-400">Carne 180g, Cheddar, Maionese, Tomate, Alface, Cebola Roxa, Bacon.</p>
+                        <p class="text-xs text-gray-400">Carne 180g, Cheddar, Maionese, Tomate, Alface, Cebola Roxa,
+                            Bacon.</p>
                     </div>
                     <span class="text-lg font-bold text-yellow-400">R$ 37,00</span>
                 </div>
                 <div class="menu-item flex justify-between items-center">
                     <div>
                         <h3 class="text-lg font-bold">BARBECUE BACON</h3>
-                        <p class="text-xs text-gray-400">Carne 180g, Cheddar, Maionese, Tomate, Cebola Roxa, Bacon e Barbecue.</p>
+                        <p class="text-xs text-gray-400">Carne 180g, Cheddar, Maionese, Tomate, Cebola Roxa, Bacon e
+                            Barbecue.</p>
                     </div>
                     <span class="text-lg font-bold text-yellow-400">R$ 39,00</span>
                 </div>
                 <div class="menu-item flex justify-between items-center border-l-4 border-yellow-500">
                     <div>
                         <h3 class="text-lg font-bold">DUPLO BURGUER</h3>
-                        <p class="text-xs text-gray-300 font-bold">2 Carnes artesanais 180g, Cheddar, Maionese e Tomate.</p>
+                        <p class="text-xs text-gray-300 font-bold">2 Carnes artesanais 180g, Cheddar, Maionese e Tomate.
+                        </p>
                     </div>
                     <span class="text-lg font-bold text-yellow-400">R$ 45,00</span>
                 </div>
                 <div class="menu-item flex justify-between items-center border-l-4 border-yellow-500">
                     <div>
                         <h3 class="text-lg font-bold text-yellow-500">DUPLO BACON</h3>
-                        <p class="text-xs text-gray-300 font-bold">2 Carnes artesanais 180g, Cheddar, Bacon e Salada Completa.</p>
+                        <p class="text-xs text-gray-300 font-bold">2 Carnes artesanais 180g, Cheddar, Bacon e Salada
+                            Completa.</p>
                     </div>
                     <span class="text-lg font-bold text-yellow-400">R$ 49,00</span>
                 </div>
@@ -226,20 +268,23 @@
         <!-- HOT DOG -->
         <section>
             <h2 class="text-3xl font-bold category-title">Hot Dog Prensado</h2>
-            <img src="https://ttescaro.github.io/cardapiocaipirona/hotdog.jpeg" alt="" class="section-banner" onerror="this.src='https://via.placeholder.com/600x300?text=Hot+Dog+Prensado'">
-            
+            <img src="https://ttescaro.github.io/cardapiocaipirona/hotdog.jpeg" alt="" class="section-banner"
+                onerror="this.src='https://via.placeholder.com/600x300?text=Hot+Dog+Prensado'">
+
             <div class="grid gap-3">
                 <div class="menu-item flex justify-between items-center">
                     <div>
                         <h3 class="font-bold">DOG SIMPLES</h3>
-                        <p class="text-[10px] text-gray-400">2 Salsichas Perdigão, Maionese, Ketchup, Mostarda e Batata Palha.</p>
+                        <p class="text-[10px] text-gray-400">2 Salsichas Perdigão, Maionese, Ketchup, Mostarda e Batata
+                            Palha.</p>
                     </div>
                     <span class="font-bold text-yellow-400">R$ 20,00</span>
                 </div>
                 <div class="menu-item flex justify-between items-center">
                     <div>
                         <h3 class="font-bold">DOG CAIPIRA</h3>
-                        <p class="text-[10px] text-gray-400">2 Salsichas, Maionese, Ketchup, Mostarda, Tomate, Milho e Batata Palha.</p>
+                        <p class="text-[10px] text-gray-400">2 Salsichas, Maionese, Ketchup, Mostarda, Tomate, Milho e
+                            Batata Palha.</p>
                     </div>
                     <span class="font-bold text-yellow-400">R$ 25,00</span>
                 </div>
@@ -256,8 +301,9 @@
         <!-- BAGUETE -->
         <section>
             <h2 class="text-3xl font-bold category-title italic">Na Baguete Francês</h2>
-            <img src="https://ttescaro.github.io/cardapiocaipirona/baguete.jpeg" alt="" class="section-banner" onerror="this.src='https://via.placeholder.com/600x300?text=Baguete+Francês'">
-            
+            <img src="https://ttescaro.github.io/cardapiocaipirona/baguete.jpeg" alt="" class="section-banner"
+                onerror="this.src='https://via.placeholder.com/600x300?text=Baguete+Francês'">
+
             <div class="space-y-4">
                 <div class="menu-item bg-blue-900/10 border-blue-500/20">
                     <div class="flex justify-between items-center mb-1">
@@ -271,7 +317,8 @@
                         <h3 class="text-xl font-bold text-yellow-400">LANCHE DE COSTELA</h3>
                         <span class="price-tag">R$ 45,00</span>
                     </div>
-                    <p class="text-sm text-gray-400">Costela desfiada, tomate, cebola roxa, rúcula, maionese e mussarela.</p>
+                    <p class="text-sm text-gray-400">Costela desfiada, tomate, cebola roxa, rúcula, maionese e
+                        mussarela.</p>
                 </div>
             </div>
         </section>
@@ -279,21 +326,28 @@
         <!-- PORÇÕES -->
         <section>
             <h2 class="text-3xl font-bold category-title">Porções de Batata</h2>
-            <img src="https://ttescaro.github.io/cardapiocaipirona/batata.jpeg" alt="" class="section-banner" onerror="this.src='https://via.placeholder.com/600x300?text=Porções+de+Batata'">
-            
+            <img src="https://ttescaro.github.io/cardapiocaipirona/batata.jpeg" alt="" class="section-banner"
+                onerror="this.src='https://via.placeholder.com/600x300?text=Porções+de+Batata'">
+
             <div class="grid gap-4 md:grid-cols-2">
                 <div class="menu-item">
-                    <h3 class="text-lg font-bold mb-3 uppercase border-b border-white/5 pb-1 text-accent">Frita Simples</h3>
+                    <h3 class="text-lg font-bold mb-3 uppercase border-b border-white/5 pb-1 text-accent">Frita Simples
+                    </h3>
                     <div class="space-y-2">
-                        <div class="flex justify-between"><span>(P) 200g</span> <span class="font-bold text-yellow-400">R$ 15,00</span></div>
-                        <div class="flex justify-between"><span>(M) 400g</span> <span class="font-bold text-yellow-400">R$ 25,00</span></div>
+                        <div class="flex justify-between"><span>(P) 200g</span> <span
+                                class="font-bold text-yellow-400">R$ 15,00</span></div>
+                        <div class="flex justify-between"><span>(M) 400g</span> <span
+                                class="font-bold text-yellow-400">R$ 25,00</span></div>
                     </div>
                 </div>
                 <div class="menu-item border-yellow-500/30">
-                    <h3 class="text-lg font-bold mb-3 uppercase border-b border-white/5 pb-1 text-yellow-500">Bacon & Cheddar</h3>
+                    <h3 class="text-lg font-bold mb-3 uppercase border-b border-white/5 pb-1 text-yellow-500">Bacon &
+                        Cheddar</h3>
                     <div class="space-y-2">
-                        <div class="flex justify-between"><span>(P) 200g</span> <span class="font-bold text-yellow-400">R$ 25,00</span></div>
-                        <div class="flex justify-between"><span>(M) 400g</span> <span class="font-bold text-yellow-400">R$ 35,00</span></div>
+                        <div class="flex justify-between"><span>(P) 200g</span> <span
+                                class="font-bold text-yellow-400">R$ 25,00</span></div>
+                        <div class="flex justify-between"><span>(M) 400g</span> <span
+                                class="font-bold text-yellow-400">R$ 35,00</span></div>
                     </div>
                 </div>
             </div>
@@ -308,11 +362,12 @@
                 <p class="text-[10px] text-gray-400 uppercase font-black">Peça agora:</p>
                 <p class="text-yellow-500 font-black text-lg leading-none">(15) 99793-7500</p>
             </div>
-            <a href="https://wa.me/5515997937500" class="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-3 rounded-xl font-black transition-all active:scale-95 shadow-xl shadow-yellow-500/20 uppercase text-sm">
-                Fazer Pedido
-            </a>
+            <a class="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-3 rounded-xl font-black transition-all active:scale-95 shadow-xl shadow-yellow-500/20 uppercase text-sm"
+                href="https://wa.me/15997937500?text=Olá,%20Gostaria%20de%20fazer%20um%20pedido!" target="_blank">Fazer
+                Pedido</a>
         </div>
     </footer>
 
 </body>
+
 </html>
